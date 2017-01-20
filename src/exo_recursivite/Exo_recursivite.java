@@ -36,34 +36,33 @@ public class Exo_recursivite {
         Theme site = new Theme("Site internet");
         Theme informatique = new Theme("Informatique");
         informatique.themes.add(new Theme("Périphérique"));
-        
+
         Theme pc = new Theme("PC FIXE");
         pc.themes.add(new Theme("Samsung"));
-        
+
         Theme ordinateur = new Theme("Ordinateur");
         ordinateur.themes.add(pc);
         ordinateur.themes.add(new Theme("PC Portable"));
         informatique.themes.add(ordinateur);
-       
+
         site.themes.add(informatique);
         site.themes.add(new Theme("Jeux vidéos"));
         System.out.println("Les sous thèmes de " + site.nom + " : ");
-        
+
         for (Theme theme : site.themes) {
             System.out.println(theme.nom);
-            
+
             for (Theme t : theme.themes) {
-                 System.out.println("\t" + t.nom);
-                 for (Theme ordi : t.themes) {
-                     
-                      System.out.println("\t\t" + ordi.nom);
-                      
-                      for (Theme boucle : ordi.themes) {
-                          System.out.println("\t\t\t" + boucle.nom);
-                         
-                     }
-                     
-                    
+                System.out.println("\t" + t.nom);
+                for (Theme ordi : t.themes) {
+
+                    System.out.println("\t\t" + ordi.nom);
+
+                    for (Theme boucle : ordi.themes) {
+                        System.out.println("\t\t\t" + boucle.nom);
+                       
+                    }
+
                 }
             }
 
